@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>选项卡</title>
+	<link rel="stylesheet" type="text/css" href="styles/tab_style.css">
+</head>
+<body>
+	<div class="box">
+		<div id="nav">
+			<ul>
+				<li class="selected"><span>体育</span></li>
+				<li><span>学习</span></li>
+				<li><span>文化</span></li>
+				<li><span>娱乐</span></li>
+				<li><span>旅游</span></li>
+			</ul>
+		</div>
+		<div id="content">
+			<div>
+				<span>地球人谁能詹姆斯！</span>
+			</div>
+			<div>
+				<span>学习不仅仅是看着你的那本书不动。</span>
+			</div>
+			<div>
+				<span>文化这个东西不是你想的那么简单。</span>
+			</div>
+			<div>
+				<span>首先我得承认生活是需要娱乐的，至少我是需要的。</span>
+			</div>
+			<div>
+				<span>有时间就带着她/他出去看看吧，哪怕那只是你们小镇的一个角。</span>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$("#nav ul li").click(function(){
+				var $li = $("#nav ul li");
+				$(this).addClass("selected")
+					   .siblings().removeClass("selected");
+				var index = $li.index(this);
+				$("#content div").eq(index).show()
+								 .siblings().hide();
+			}).hover(function(){
+				$(this).addClass("hover");
+			},function(){
+				$(this).removeClass("hover");
+			})
+		})
+	</script>
+</body>
+</html>

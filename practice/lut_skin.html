@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>网页换肤</title>
+	<link rel="stylesheet" type="text/css" href="styles/skin_style.css">
+	<link id="cssfile" rel="stylesheet" type="text/css" href="styles/skin.css">
+</head>
+<body>
+	<div class="nav">
+		<ul id="skin">
+			<li id="skin_0" class="color0" title="灰褐色">灰褐色</li>
+			<li id="skin_1" title="紫色">紫色</li>
+			<li id="skin_2" title="红色">红色</li>
+			<li id="skin_3" title="天蓝色">天蓝色</li>
+			<li id="skin_4" title="橙色">橙色</li>
+			<li id="skin_5" title="淡绿色">淡绿色</li>
+		</ul>
+	</div>
+	<div class="content">
+		<h1>坚持</h1>
+		<p>坚持这件事情，说起来简单，做起来却似乎不再是当初那种意气奋发的感觉。都说贵在坚持，可是，这份坚持岂是一朝一夕就能说明的呢。后来，不知道是怎么了，当初的那份热情，似乎已消磨殆尽，剩下的只是各种借口的自我安慰，或者是无可奈何的默默自责。尽管事情往往如此，还是选择了一次次地坚持；因为每个人都应该有个梦想，一个属于自己的梦，或多或少。所以不论怎样，都应该为了那个梦想去坚持，来奋斗的，爱情如此，生活亦是这样。所以每天睁开双眼的那一刻，那些昨天的创伤，昔日的种种挫折，都让他随风去吧。今天的我们，面朝阳光，勇敢的活着。向幸福更近一点。</p>
+	</div>
+	<script type="text/javascript" 			src="js/jquery.js"></script>
+	<script type="text/javascript">
+		var $li = $("#skin li");
+		$li.click(function(){
+			var index = $li.index(this);
+			$(this).addClass("selected").removeClass("color"+index)
+				   .siblings().removeClass("selected");
+			var txt = this.id;
+			$("#cssfile").attr("href","styles/"+txt+".css");
+		})
+	</script>
+</body>
+</html>
